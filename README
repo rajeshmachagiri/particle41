@@ -21,6 +21,7 @@ Basic information are need to deploy the manifests in AWS EKS:
 
 
 To Provision Infra/EKS
+Note: U need to configure awscli with valid aws creds and terraform cli use these creds to actions in AWS
 1. Go to terraform folder 
 2. terraform init
 3. terraform plan
