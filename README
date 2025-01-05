@@ -1,0 +1,28 @@
+Basic information are need to deploy the manifests in AWS EKS:
+
+1. Create Your Application
+      Develop your application in any programming language (e.g., Node.js, Python, Java, etc.).(USED AI tool to create the APP)
+      Ensure the application runs correctly locally before containerization.
+2. Create a Dockerfile
+      In the root folder of your project, create a Dockerfile that defines how your app will run in a container.
+3. Build and Push the Docker Image to Docker Hub
+      Login to Docker Hub
+      docker build -t your-dockerhub-username/your-repository-name:latest .
+      docker push your-dockerhub-username/your-repository-name:latest
+4. Create Kubernetes Manifests
+      Create Kubernetes manifest files (k8s.yaml) to define your application's deployment and service.
+5. Deploy to EKS Cluster
+      Generate kubeconfig: Configure kubectl to interact with EKS
+      aws eks --region your-region update-kubeconfig --name your-cluster-name
+6. Apply Kubernetes Manifests
+      kubectl apply -f manifest.yaml
+7. Port-Forward the Service (for ClusterIP services)
+      kubectl port-forward svc/your-app-service 5000:5000
+
+
+To Provision Infra/EKS
+1. Go to terraform folder 
+2. terraform init
+3. terraform plan
+4. terraform apply
+
